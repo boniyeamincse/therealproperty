@@ -1,0 +1,69 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  padding: var(--spacing-xl) 0;
+}
+
+.heroContainer {
+  text-align: center;
+  max-width: 900px;
+}
+
+.title {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.searchBox {
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation-delay: 0.2s;
+}
+
+.searchRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 1rem;
+}
+
+.searchInput {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  font-family: inherit;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .searchRow {
+    grid-template-columns: 1fr;
+  }
+}

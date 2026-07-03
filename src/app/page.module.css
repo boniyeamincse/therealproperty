@@ -1,0 +1,51 @@
+.propertyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.featureCard {
+  background: var(--bg-main);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureIcon {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.featureCard h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.featureCard p {
+  color: var(--text-muted);
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  padding: var(--spacing-xl) 0;
+  margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}

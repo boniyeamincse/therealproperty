@@ -1,65 +1,111 @@
-import Image from "next/image";
+import HeroSection from '@/components/HeroSection';
+import SectionTitle from '@/components/SectionTitle';
+import PropertyCard from '@/components/PropertyCard';
+import styles from './page.module.css';
 
 export default function Home() {
+  const featuredProperties = [
+    {
+      id: '1',
+      title: 'Luxury Glass Apartment',
+      location: 'Gulshan 2, Dhaka',
+      price: '৳ 3.5 Crore',
+      type: 'Apartment',
+      status: 'For Sale' as const,
+      bedrooms: 4,
+      bathrooms: 4,
+      area: '2500 sqft',
+      image: '/images/apartment.png'
+    },
+    {
+      id: '2',
+      title: 'Modern IT Office Space',
+      location: 'Banani, Dhaka',
+      price: '৳ 2.5 Lakh/mo',
+      type: 'Commercial Space',
+      status: 'For Rent' as const,
+      area: '4000 sqft',
+      image: '/images/office.png'
+    },
+    {
+      id: '3',
+      title: 'Premium Duplex House',
+      location: 'Bashundhara R/A, Dhaka',
+      price: '৳ 5 Crore',
+      type: 'Duplex',
+      status: 'For Sale' as const,
+      bedrooms: 5,
+      bathrooms: 6,
+      area: '4500 sqft',
+      image: '/images/hero.png'
+    }
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div>
+      <HeroSection 
+        title="Find Your Dream Property" 
+        subtitle="The best real estate platform in Bangladesh to buy, rent, or lease."
+        backgroundImage="/images/hero.png"
+        showSearch={true}
+      />
+      
+      {/* Featured Properties */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle 
+            title="Featured Properties" 
+            subtitle="Hand-picked exclusive properties by our experts" 
+          />
+          
+          <div className={styles.propertyGrid}>
+            {featuredProperties.map(prop => (
+              <PropertyCard key={prop.id} {...prop} />
+            ))}
+          </div>
+          
+          <div className="text-center" style={{ marginTop: 'var(--spacing-md)' }}>
+            <a href="/properties" className="btn btn-outline">Browse All Properties</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="section-alt">
+        <div className="container">
+          <SectionTitle title="Why Choose The Real Property" />
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🛡️</div>
+              <h3>Trusted Service</h3>
+              <p>We provide transparent and secure property transactions.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>✅</div>
+              <h3>Verified Listings</h3>
+              <p>All our properties are 100% verified by our expert team.</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>👨‍💼</div>
+              <h3>Expert Agents</h3>
+              <p>Professional agents to guide you through the process.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <div className="container text-center">
+          <h2 style={{ color: 'var(--text-light)', marginBottom: '1rem' }}>Want to sell your property?</h2>
+          <p style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '2rem', fontSize: '1.2rem' }}>
+            List your property with us and get the best value in the market.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href="/sell-property" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
+            Submit Your Property
           </a>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
