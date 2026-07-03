@@ -1,6 +1,7 @@
 import BannerSlider from '@/components/BannerSlider';
 import HeroSection from '@/components/HeroSection';
 import InfoCards from '@/components/InfoCards';
+import ServicesSection from '@/components/ServicesSection';
 import SectionTitle from '@/components/SectionTitle';
 import PropertyCard from '@/components/PropertyCard';
 import styles from './page.module.css';
@@ -53,6 +54,8 @@ export default function Home() {
       />
       
       <InfoCards />
+
+      <ServicesSection />
 
       
       {/* Featured Properties */}

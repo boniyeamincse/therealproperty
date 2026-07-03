@@ -27,7 +27,7 @@ export default function Contact() {
             
             <div className={styles.infoBox}>
               <h4>Email</h4>
-              <p>info@aribarealestate.com</p>
+              <p>info@realpropertiesbd.com</p>
             </div>
             
             <div className={styles.infoBox}>
