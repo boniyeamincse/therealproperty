@@ -4,16 +4,12 @@ import styles from './HeroSection.module.css';
 interface HeroProps {
   title: string;
   subtitle: string;
-  backgroundImage?: string;
   showSearch?: boolean;
 }
 
-export default function HeroSection({ title, subtitle, backgroundImage = '/images/hero.png', showSearch = false }: HeroProps) {
+export default function HeroSection({ title, subtitle, showSearch = false }: HeroProps) {
   return (
-    <section 
-      className={styles.hero} 
-      style={{ backgroundImage: `linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.8)), url(${backgroundImage})` }}
-    >
+    <section className={styles.hero}>
       <div className={`container ${styles.heroContainer}`}>
         <h1 className={`${styles.title} animate-fade-in`}>{title}</h1>
         <p className={`${styles.subtitle} animate-fade-in`}>{subtitle}</p>

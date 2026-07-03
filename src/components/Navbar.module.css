@@ -44,6 +44,51 @@
   align-items: center;
 }
 
+.callSalesBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #D32F2F;
+  padding: 6px 12px;
+  background-color: var(--bg-white);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.callSalesBox:hover {
+  background-color: rgba(211, 47, 47, 0.05);
+}
+
+.callIconWrapper {
+  background: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.callTextWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.callLabel {
+  font-size: 0.75rem;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.callNumber {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #D32F2F;
+  line-height: 1;
+}
+
 @media (max-width: 1024px) {
   .navLinks {
     display: none; /* In a real app, implement a hamburger menu */

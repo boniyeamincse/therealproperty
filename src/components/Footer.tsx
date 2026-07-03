@@ -42,7 +42,15 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>&copy; {new Date().getFullYear()} The Real Property. All rights reserved.</p>
+        <div className={`container ${styles.footerBottomContainer}`}>
+          <p>&copy; {new Date().getFullYear()} The Real Property. All rights reserved.</p>
+          <div className={styles.policyLinks}>
+            <Link href="/refund-policy">Refund Policy</Link>
+            <Link href="/delivery-policy">Delivery Policy</Link>
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

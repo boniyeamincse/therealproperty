@@ -1,12 +1,10 @@
 .hero {
-  min-height: 60vh;
   display: flex;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  justify-content: center;
+  background-color: var(--primary);
   color: var(--text-light);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .heroContainer {

@@ -1,4 +1,6 @@
+import BannerSlider from '@/components/BannerSlider';
 import HeroSection from '@/components/HeroSection';
+import InfoCards from '@/components/InfoCards';
 import SectionTitle from '@/components/SectionTitle';
 import PropertyCard from '@/components/PropertyCard';
 import styles from './page.module.css';
@@ -43,12 +45,15 @@ export default function Home() {
 
   return (
     <div>
+      <BannerSlider />
       <HeroSection 
         title="Find Your Dream Property" 
         subtitle="The best real estate platform in Bangladesh to buy, rent, or lease."
-        backgroundImage="/images/hero.png"
         showSearch={true}
       />
+      
+      <InfoCards />
+
       
       {/* Featured Properties */}
       <section className="section">

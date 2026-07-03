@@ -71,14 +71,46 @@
 .footerBottom {
   background-color: var(--primary-light);
   padding: var(--spacing-md) 0;
-  text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.footerBottomContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.policyLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.policyLinks a {
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.policyLinks a:hover {
+  color: var(--accent-alt);
 }
 
 @media (max-width: 768px) {
   .footerContainer {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+  }
+
+  .footerBottomContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .policyLinks {
+    justify-content: center;
   }
 }
