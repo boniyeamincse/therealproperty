@@ -23,6 +23,30 @@
   line-height: 1.6;
 }
 
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.socialLinks a:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
 .footerColumn h4 {
   color: var(--accent);
   margin-bottom: var(--spacing-md);
